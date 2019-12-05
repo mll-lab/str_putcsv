@@ -1,7 +1,8 @@
-<?php declare(strict_types=1);
+<?php
 
-if (!function_exists('str_putcsv'))
-{
+declare(strict_types=1);
+
+if (!function_exists('str_putcsv')) {
     function str_putcsv(array $fields, ?string $delimiter = null, ?string $enclosure = null, ?string $escape = null): string
     {
         $delimiter = $delimiter ?? ',';
