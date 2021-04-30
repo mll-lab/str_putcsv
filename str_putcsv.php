@@ -1,14 +1,25 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-if (!function_exists('str_putcsv')) {
-    function str_putcsv(array $fields, ?string $delimiter = null, ?string $enclosure = null, ?string $escape = null): string
+if (!function_exists('str_putcsv'))
+{
+    /**
+     * Convert an array into a CSV string.
+     *
+     * @param array $fields
+     * The array to convert.
+     * @param string $delimiter [optional]
+     * Set the field delimiter (one character only).
+     * Defaults to a comma (,)
+     * @param string $enclosure [optional]
+     * Set the field enclosure character (one character only).
+     * Defaults to a double quote (")
+     * @param string $escape [optional]
+     * Set the escape character (one character only). 
+     * Defaults to a backslash (\)
+     * @return string The CSV string containing all the data.
+     */
+    function str_putcsv(array $fields, ?string $delimiter = ',', ?string $enclosure = '"', ?string $escape = '\\'): string
     {
-        $delimiter = $delimiter ?? ',';
-        $enclosure = $enclosure ?? '"';
-        $escape = $escape ?? '\\';
-
         // Open an in-memory file resource
         $fp = fopen('php://temp', 'r+b');
 
