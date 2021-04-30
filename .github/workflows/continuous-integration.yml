@@ -1,0 +1,85 @@
+# https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+name: "Continuous Integration"
+
+jobs:
+  coding-standards:
+    name: "Coding Standards"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          php-version: 7.4
+
+      - name: "Validate composer.json and composer.lock"
+        run: composer validate --strict
+
+      - name: "Install dependencies with composer"
+        run: composer install --no-interaction --no-progress
+
+      - name: "Run localheinz/composer-normalize"
+        run: composer normalize --dry-run
+
+  static-code-analysis:
+    name: "Static Code Analysis"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          php-version: 7.4
+
+      - name: "Install dependencies with composer"
+        run: composer install --no-interaction --no-progress
+
+      - name: "Run phpstan"
+        run: vendor/bin/phpstan
+
+  tests:
+    name: "Test on PHP ${{ matrix.php-version }}"
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version:
+          - "7.1"
+          - "7.2"
+          - "7.3"
+          - "7.4"
+          - "8.0"
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install PHP with extensions"
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          php-version: ${{ matrix.php-version }}
+
+      - name: "Install dependencies with composer"
+        run: composer install --no-interaction --no-progress
+
+      - name: "Run unit tests with phpunit/phpunit"
+        run: vendor/bin/phpunit

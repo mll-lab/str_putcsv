@@ -1,19 +1,27 @@
 {
-    "name": "kafene/str_putcsv",
-    "description": "a str_putcsv function for php",
-    "keywords": ["csv", "str_putcsv"],
+    "name": "mll-lab/str_putcsv",
+    "description": "The missing `str_putcsv` function for php.",
+    "keywords": [
+        "php",
+        "csv",
+        "str_getcsv",
+        "str_putcsv"
+    ],
     "homepage": "https://github.com/kafene/str_putcsv",
     "license": "MPL-2.0",
-    "autoload": {
-        "files": ["str_putcsv.php"]
-    },
     "require": {
-        "php": ">=7.1"
+        "php": ">=7.1",
+        "thecodingmachine/safe": "^1.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5"
+        "ergebnis/composer-normalize": "^2.13",
+        "phpstan/phpstan": "^0.12.85",
+        "phpunit/phpunit": "^7.5",
+        "thecodingmachine/phpstan-safe-rule": "^1.0"
     },
-    "scripts": {
-        "test": "phpunit"
+    "autoload": {
+        "files": [
+            "str_putcsv.php"
+        ]
     }
 }
