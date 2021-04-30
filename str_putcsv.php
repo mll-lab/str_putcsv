@@ -1,24 +1,22 @@
-<?php declare(strict_types=1);
+<?php
 
-if (!function_exists('str_putcsv'))
-{
+declare(strict_types=1);
+
+if (!function_exists('str_putcsv')) {
     /**
      * Convert an array into a CSV string.
      *
      * @param array<mixed> $fields
-     * The array to convert.
-     *
-     * @param string $delimiter [optional]
-     * Set the field delimiter (one character only).
-     * Defaults to a comma (,)
-     *
-     * @param string $enclosure [optional]
-     * Set the field enclosure character (one character only).
-     * Defaults to a double quote (")
-     *
-     * @param string $escape [optional]
-     * Set the escape character (one character only).
-     * Defaults to a backslash (\)
+     *                                The array to convert.
+     * @param string       $delimiter [optional]
+     *                                Set the field delimiter (one character only).
+     *                                Defaults to a comma (,)
+     * @param string       $enclosure [optional]
+     *                                Set the field enclosure character (one character only).
+     *                                Defaults to a double quote (")
+     * @param string       $escape    [optional]
+     *                                Set the escape character (one character only).
+     *                                Defaults to a backslash (\)
      *
      * @return string The CSV string containing all the data.
      */
