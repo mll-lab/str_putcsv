@@ -1,13 +1,13 @@
 {
     "name": "mll-lab/str_putcsv",
-    "description": "The missing `str_putcsv` function for php.",
+    "description": "The missing `str_putcsv` function for PHP",
     "keywords": [
         "php",
         "csv",
         "str_getcsv",
         "str_putcsv"
     ],
-    "homepage": "https://github.com/kafene/str_putcsv",
+    "homepage": "https://github.com/mll-lab/str_putcsv",
     "license": "MPL-2.0",
     "require": {
         "php": "^7.2 || ^8.0",
