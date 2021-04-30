@@ -1,8 +1,10 @@
 # str_putcsv
 
+[![Packagist](https://img.shields.io/packagist/v/mll-lab/str_putcsv.svg)](https://packagist.org/packages/mll-lab/str_putcsv)
+
 The missing `str_putcsv` function for php.
 
-Works analogous to [`str_getcsv`](https://www.php.net/manual/function.str-getcsv.php).
+Inverse of the PHP native function [`str_getcsv`](https://www.php.net/manual/function.str-getcsv.php).
 
 ## Installation
 
