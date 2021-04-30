@@ -23,7 +23,7 @@ if (!function_exists('str_putcsv')) {
     function str_putcsv(array $fields, string $delimiter = ',', string $enclosure = '"', string $escape = '\\'): string
     {
         // Open an in-memory file resource
-        $fp = \Safe\fopen('php://temp', 'r+b');
+        $fp = \Safe\fopen('php://memory', 'r+b');
 
         try {
             // Write the fields array to the file resource as a CSV line
