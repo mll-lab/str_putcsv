@@ -1,12 +1,10 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 if (!function_exists('str_putcsv')) {
     /**
      * Convert an array into a CSV string.
      *
-     * @param array<mixed> $fields
+     * @param array<bool|float|int|string|Stringable|null> $fields
      *                                The array to convert.
      * @param string       $delimiter [optional]
      *                                Set the field delimiter (one character only).
