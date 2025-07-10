@@ -9,6 +9,12 @@ See [GitHub releases](https://github.com/mll-lab/str_putcsv/releases).
 
 ## Unreleased
 
+## v1.2.0
+
+### Added
+
+- Support `thecodingmachine/safe:^3`
+
 ## v1.1.0
 
 ### Added
